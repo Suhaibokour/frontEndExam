@@ -22,7 +22,7 @@ constructor(props){
 componentDidMount=()=>{
   const {user} = this.props.auth0;
   let email = user.email;
-  axios.get(`http://localhost:3030/getFruit?email=${email}`).then(result=>{
+  axios.get(`https://exam-suhaib401.herokuapp.com/getFruit?email=${email}`).then(result=>{
     this.setState({favArr:result.data});
   })
 }
@@ -32,7 +32,7 @@ componentDidMount=()=>{
 delete=(id)=>{
   const {user} = this.props.auth0;
   let email = user.email;
-  axios.delete(`http://localhost:3030/deleteFruit/${id}?email=${email}`).then(result=>{
+  axios.delete(`https://exam-suhaib401.herokuapp.com/deleteFruit/${id}?email=${email}`).then(result=>{
     this.setState({favArr:result.data});
   })
 }
@@ -59,7 +59,7 @@ update=(event)=>{
     price: event.target.price.value,
     email:user.email
   }
-  axios.put(`http://localhost:3030/updateFruit/${this.state.id}`,obj)
+  axios.put(`https://exam-suhaib401.herokuapp.com/updateFruit/${this.state.id}`,obj)
   .then(result=>{
     this.setState({
       favArr:result.data

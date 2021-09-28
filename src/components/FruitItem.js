@@ -17,7 +17,7 @@ addToFav=(item)=>{
         price:item.price,
         email:user.email
     }
-axios.post(`http://localhost:3030/addFruit`,obj).then(result=>{
+axios.post(`https://exam-suhaib401.herokuapp.com/addFruit`,obj).then(result=>{
     console.log(result);
 })
 }

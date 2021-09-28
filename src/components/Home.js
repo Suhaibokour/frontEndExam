@@ -14,7 +14,7 @@ apiData:[]
 }
 
 componentDidMount=()=>{
-  axios.get('http://localhost:3030/fruit').then(result=>{
+  axios.get('https://exam-suhaib401.herokuapp.com/fruit').then(result=>{
     this.setState({
       apiData:result.data
     })
